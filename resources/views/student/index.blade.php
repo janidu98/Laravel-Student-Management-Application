@@ -30,17 +30,17 @@
                             <td>{{ $student->address }}</td>
                             <td>{{ $student->mobile }}</td>
                             <td>
-                                <a href="{{url('/student/' . $student->id)}}" title='View student'>
+                                <a href="{{url('/students/' . $student->id)}}" title='View student'>
                                     <button class="btn btn-info btn-sm">
                                         View
                                     </button>
                                 </a>
-                                <a href="{{url('/student/' . $student->id) . './edit'}}" title='Edit student'>
+                                <a href="{{url('/students/' . $student->id) . './edit'}}" title='Edit student'>
                                     <button class="btn btn-primary btn-sm">
                                         Edit
                                     </button>
                                 </a>
-                                <form action="{{url('/student'.'/'.$student->id)}}" method='POST' accept-charset='UTF-8' style="display:inline">
+                                <form action="{{url('/students/'.$student->id)}}" method='POST' accept-charset='UTF-8' style="display:inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Student" onclick="return confirm(&quot;Confirm delete?&quot;)">
