@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view("student.create");
     }
 
     /**
@@ -29,7 +29,9 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Student::create($input);
+        return redirect("students")->with("success","Student was Added");
     }
 
     /**
